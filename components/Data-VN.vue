@@ -4,7 +4,7 @@
       <h3 class="text-3xl text-blue-900 font-bold mb-4">Cases</h3>
       <div class="text-2xl mb-4">
         <span class="font-bold text-red-700"
-          >Số Ca Nhiễm: {{ numberWithCommas(statsVN.infected) }}</span
+          >Số Ca Nhiễm: {{ numberWithCommas(statsVN.cases) }}</span
         >
       </div>
       <div class="text-2xl mb-4 text-green-700">
@@ -14,12 +14,12 @@
       </div>
       <div class="text-2xl mb-4 text-yellow-400">
         <span class="font-bold"
-          >Đang Điều Trị: {{ numberWithCommas(statsVN.treated) }}</span
+          >Đang Điều Trị: {{ numberWithCommas(statsVN.active) }}</span
         >
       </div>
       <div class="text-2xl mb-4">
         <span class="font-bold"
-          >Tử Vong: {{ numberWithCommas(statsVN.deceased) }}</span
+          >Tử Vong: {{ numberWithCommas(statsVN.deaths) }}</span
         >
       </div>
     </div>

@@ -26,26 +26,42 @@ export default {
     }
   },
   async created() {
-    const data = await this.testNewApi()
-    this.dataDate = data[0].lastUpdatedAtApify
-    this.statsVN = data[0]
+    const newData = await this.fetchnewData()
+    // eslint-disable-next-line no-console
+    console.log(newData)
+    let index = -1
+    newData.forEach((ele, i) => {
+      if (ele.country === 'Vietnam') {
+        index = i
+      }
+    })
+    this.dataDate = new Date()
+    this.statsVN = newData[index]
+    // const data = await this.testNewApi()
+    // this.dataDate = data[0].lastUpdatedAtApify
+    // this.statsVN = data[0]
     this.loading = false
   },
   methods: {
-    async testNewApi() {
-      const ApifyClient = require('apify-client')
+    // async testNewApi() {
+    //   const ApifyClient = require('apify-client')
 
-      // Initialize the ApifyClient with API token
-      const client = new ApifyClient({
-        token: 'u9RYa7qceEepGkWJEDhvnXdHz',
-      })
+    //   // Initialize the ApifyClient with API token
+    //   const client = new ApifyClient({
+    //     token: 'u9RYa7qceEepGkWJEDhvnXdHz',
+    //   })
 
-      // Prepare actor input
-      const input = {}
-      // Run the actor and wait for it to finish
-      const run = await client.actor('dtrungtin/covid-vi').call(input)
-      const { items } = await client.dataset(run.defaultDatasetId).listItems()
-      return items
+    //   // Prepare actor input
+    //   const input = {}
+    //   // Run the actor and wait for it to finish
+    //   const run = await client.actor('dtrungtin/covid-vi').call(input)
+    //   const { items } = await client.dataset(run.defaultDatasetId).listItems()
+    //   return items
+    // },
+    async fetchnewData() {
+      const newRes = await fetch('https://disease.sh/v3/covid-19/countries')
+      const newData = await newRes.json()
+      return newData
     },
   },
 }

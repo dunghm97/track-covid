@@ -5,7 +5,7 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
   router: {
-    base: '/<repository-name>/',
+    base: '/track-covid/',
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
