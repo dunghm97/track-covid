@@ -9,11 +9,8 @@
         >covid19api.com</a
       >
       &
-      <a
-        href="https://apify.com/dtrungtin/covid-vi/api"
-        target="_blank"
-        class="text-blue-300"
-        >apify.com</a
+      <a href="https://disease.sh/" target="_blank" class="text-blue-300"
+        >disease.sh</a
       >
     </p>
     <div class="link-site text-base text-right text-white">
