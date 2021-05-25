@@ -49,6 +49,8 @@ export default {
     this.stats = data.Global
     this.countries = data.Countries
     this.loading = false
+    const newData = await this.fetchnewData()
+    console.log(newData)
   },
   methods: {
     async fetchCovidData() {
@@ -68,6 +70,11 @@ export default {
       this.stats = data.Global
       this.dataDate = data.Date
       this.loading = false
+    },
+    async fetchnewData() {
+      const newRes = await fetch('https://disease.sh/v3/covid-19/all')
+      const newData = await newRes.json()
+      return newData
     },
   },
 }
