@@ -4,7 +4,7 @@
       <div
         v-for="item in showNews"
         :key="item.id"
-        class="flex flex-col justify-center items-center m-4"
+        class="flex flex-col justify-start items-center m-4"
       >
         <div class="image-news">
           <a :href="news[item - 1].article_url" target="_blank"
@@ -80,7 +80,7 @@ export default {
 }
 .description {
   max-width: 300px;
-  height: 100%;
+  height: auto;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
