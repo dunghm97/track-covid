@@ -7,13 +7,13 @@
         class="flex flex-col justify-start items-center m-4"
       >
         <div class="image-news">
-          <a :href="news[item - 1].article_url" target="_blank"
-            ><img :src="news[item - 1].image_url" alt="image-news"
+          <a :href="news[item - 1].url" target="_blank"
+            ><img :src="news[item - 1].urlToImage" alt="image-news"
           /></a>
         </div>
         <div class="description mt-2">
           <h2>
-            <a font-bold :href="news[item - 1].article_url" target="_blank">{{
+            <a font-bold :href="news[item - 1].url" target="_blank">{{
               news[item - 1].title
             }}</a>
           </h2>
@@ -75,7 +75,7 @@ export default {
     min-height: 100%;
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
   }
 }
 .description {
@@ -86,6 +86,9 @@ export default {
   display: -webkit-box;
   -webkit-line-clamp: 3; /* number of lines to show */
   -webkit-box-orient: vertical;
+}
+.description h2 a {
+  font-weight: bold;
 }
 .btn {
   width: fit-content;

@@ -16,7 +16,7 @@
 import DataTitle from '@/components/DataTitle.vue'
 import DataVn from '@/components/Data-VN.vue'
 import News from '@/components/News.vue'
-const tokenNews = 'zFM7x41Ej7Ui9B64xjefVqOv2YGnT8CZk5qz5aAP5bBQYssL7BZFNCuewcEB'
+const tokenNews = '3a330cdf101846b3a194c6ad68134478'
 export default {
   components: { DataTitle, DataVn, News },
   data() {
@@ -43,6 +43,7 @@ export default {
     this.statsVN = data[index]
     this.loading = false
     this.news = dataNews.articles
+    console.log(this.news)
   },
   methods: {
     async fetchnewData() {
@@ -52,7 +53,7 @@ export default {
     },
     async getNewsData() {
       const news = await fetch(
-        `https://gnewsapi.net/api/search?q=covid-19&language=vi&country=vn&api_token=${tokenNews}`
+        `https://newsapi.org/v2/everything?q=covid&apiKey=${tokenNews}`
       )
       const dataNews = await news.json()
       return dataNews
