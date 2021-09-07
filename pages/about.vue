@@ -43,7 +43,6 @@ export default {
     this.statsVN = data[index]
     this.loading = false
     this.news = dataNews.articles
-    console.log(this.news)
   },
   methods: {
     async fetchnewData() {

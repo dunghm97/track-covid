@@ -34,6 +34,7 @@
 export default {
   name: 'News',
   props: {
+    // eslint-disable-next-line vue/require-default-prop
     news: Array,
   },
   data() {
